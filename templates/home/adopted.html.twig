@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} - Adoptés{% endblock %}
+
+{% block body %}
+<div class="container flex-align">
+        <div class="row">
+            {% for rescue in rescues %}
+            <div class="col-4">
+                <div class="card">
+                    <img src="uploads/images/{{rescue.images[0].image}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{rescue.name}}</h5>
+                        <p class="card-text">Né.e le {{rescue.birthday|date('d/m/Y')}} - {{rescue.gender|capitalize}}</p>
+                        <p class="card-text"></p>
+                        <a href="{{path('show_one', {'id' : rescue.id })}}" class="btn btn-primary">Plus de détails</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

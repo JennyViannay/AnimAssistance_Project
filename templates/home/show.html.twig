@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} - {{rescue.name}}{% endblock %}
+
+{% block body %}
+<div class="container flex-align">
+    <div class="row">
+        <div class="col-6">
+            <h1 class="ml-2">{{rescue.name}}</h1>
+            <p>{{rescue.description|raw}}</p>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                {% for image in rescue.images %}
+                <div class="col-4" style="height: 300px; width:300px;">
+                    <img src="{{asset('uploads/images/' ~ image.image ) }}" class="img-fluid" alt="...">
+                </div>
+                {% endfor %}
+            </div>
+            {% if rescue.isAdopted == false %}
+            <iframe
+                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&appId=554187724968318&width=93&height=28"
+                width="93" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
