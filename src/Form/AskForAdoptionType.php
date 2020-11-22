@@ -22,7 +22,7 @@ class AskForAdoptionType extends AbstractType
             ->add('phoneBis')
             ->add('facebookProfile')
             ->add('gardenAera')
-            ->add('isClotured')
+            ->add('gardenIsClotured')
             ->add('clotureDetails')
             ->add('age')
             ->add('ageChildren')
@@ -61,6 +61,9 @@ class AskForAdoptionType extends AbstractType
             ->add('dogCanAccesGarden')
             ->add('gender')
             ->add('aggreedTerm')
+            ->add('housingAera')
+            ->add('howManyDog')
+            ->add('animalDetails')
         ;
     }
 

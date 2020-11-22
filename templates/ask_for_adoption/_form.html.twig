@@ -1,4 +1,481 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {
+    "attr": {"id": "regForm"}
+}) }}
+<div class="row">
+    <div class="tab">
+        <h3 class="mb-5">Informations générales :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lastname">Nom</label>
+                    {{ form_widget(form.lastname, { 
+                        "attr": {"class": "form-control my-2", "placeholder": "Nom"}
+                    }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    {{ form_widget(form.firstname, { 
+                        "attr": {"class": "form-control my-2", "placeholder": "Prénom"}
+                    }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ form_widget(form.email, { 
+                        "attr": {"class": "form-control my-2", "placeholder": "Email"}
+                    }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="address">Adresse</label>
+                    {{ form_widget(form.address, { 
+                        "attr": {"class": "form-control my-2", "placeholder": "Adresse"}
+                    }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="zipcode">Code Postal</label>
+                    {{ form_widget(form.zipcode, { 
+                        "attr": {"class": "form-control my-2", "placeholder": "75010"}
+                    }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="city">Ville</label>
+                    {{ form_widget(form.city, { 
+                                    "attr": {"class": "form-control my-2", "placeholder": "Ville"}
+                                }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Informations générales :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="phone">Téléphone principal</label>
+                    {{ form_widget(form.phone, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="phoneBis">Téléphone secondaire</label>
+                    {{ form_widget(form.phoneBis, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="job">Profession</label>
+                    {{ form_widget(form.job, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="age">Quel âge avez-vous ?</label>
+                    {{ form_widget(form.age, { 
+                                    "attr": {"class": "form-control my-2", "placeholder": ""}
+                                }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="facebookProfile">Profil facebook</label>
+                    {{ form_widget(form.facebookProfile, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Informations générales :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="facebookProfile">Type de logement</label>
+                    {{ form_widget(form.housingType, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="housingAera">Superficie du logement en m2</label>
+                    {{ form_widget(form.housingAera, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveGarden">Avez vous un jardin ?</label>
+                    {{ form_widget(form.haveGarden, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="gardenAera">Superficie de votre jardin en m2</label>
+                    {{ form_widget(form.gardenAera, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="isClotured">Le jardin est-il clôturé ?</label>
+                    {{ form_widget(form.gardenIsClotured, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-xs-12 ">
+                <div class="form-group">
+                    <label for="clotureDetail">Indiquez la hauteur et la nature de la clôture (mur, grillage, haies,
+                        sapins,
+                        autre). <br>
+                        S’il n’est pas entièrement clôturé, décrivez-le brièvement</label>
+                        {{ form_widget(form.clotureDetails, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                        }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Informations générales :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="isActive">Êtes vous une personne active ?</label>
+                    {{ form_widget(form.isActive, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveChildren">Avez vous des enfants ?</label>
+                    {{ form_widget(form.haveChildren, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="ageChildren">Précisez combien d'enfant vous avez et leur(s) âge(s)</label>
+                    {{ form_widget(form.ageChildren, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="partnerJob">Quelle est la profession de votre conjoint ?</label>
+                    {{ form_widget(form.partnerJob, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveAllergy">Y a t'il des cas d'allergie dans votre famile ?</label>
+                    {{ form_widget(form.haveAllergy, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="allergyDetails">Présisez :</label>
+                    {{ form_widget(form.allergyDetails, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="everyoneIsOk">Toute la famille est-elle d’accord pour cette adoption ?</label>
+                    {{ form_widget(form.everyoneIsOk, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Informations générales :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveDog">Avez vous des chiens ?</label>
+                    {{ form_widget(form.haveDog, { 
+                                    "attr": {"class": "form-control my-2", "placeholder": ""}
+                                }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="howManyDog">Combien ?</label>
+                    {{ form_widget(form.howManyDog, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="dogDetails">Précisez le nom, la race, l’âge et le caractère pour chaque chien :</label>
+                    {{ form_widget(form.dogDetails, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveCat">Avez vous des chats ?</label>
+                    {{ form_widget(form.haveCat, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="catDetails">Comment se comportent-ils avec vos chiens ?</label>
+                    {{ form_widget(form.catDetails, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="haveOtherAnimal">Avez vous d'autres animaux ?</label>
+                    {{ form_widget(form.haveOtherAnimal, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="animalDetails">Précisez :</label>
+                    {{ form_widget(form.animalDetails, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="animalSterilized">Vos animaux sont ils stérilisés ou castrés ?</label>
+                    {{ form_widget(form.animalSterilized, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="sterilizedDetail">Précisez :</label>
+                    {{ form_widget(form.sterilizedDetail, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="canBeIsolated">Avez-vous la possibilité d’isoler les uns des autres ?</label>
+                    {{ form_widget(form.canBeIsolated, { 
+                                    "attr": {"class": "form-control my-2", "placeholder": ""}
+                                }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Si votre demande concerne un chien :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lonelyHoursDay">Combien de temps est-il susceptible de rester seul dans la journée ? (sans
+                        humain)</label>
+                    {{ form_widget(form.lonelyHoursDay, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lonelyHoursMorning">Nombre d’heures le matin :</label>
+                    {{ form_widget(form.lonelyHoursMorning, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lonelyHoursAfternoon">Nombre d’heures l'après-midi :</label>
+                    {{ form_widget(form.lonelyHoursAfternoon, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lonelyHoursEvening">Nombre d’heures le soir :</label>
+                    {{ form_widget(form.lonelyHoursEvening, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="daysByWeek">Combien de jours par semaine ?</label>
+                    {{ form_widget(form.daysByWeek, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="lunchTime">Rentrez-vous à midi ?</label>
+                    {{ form_widget(form.lunchTime, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="someoneCanHelp">Si vous travaillez toute la journée, quelqu’un pourra-t-il le sortir
+                        ?</label>
+                    {{ form_widget(form.someoneCanHelp, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="dogHousing">Où garderez vous le chien pendant votre absence ?</label>
+                    {{ form_widget(form.dogHousing, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="dogCanAccesGarden">A t'il un accès au jardin pendant votre absence ?</label>
+                    {{ form_widget(form.dogCanAccesGarden, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="nightHousingDog">Où garderez vous le chien pendant la nuit ?</label>
+                    {{ form_widget(form.nightHousingDog, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="whoIsCarring">Qui va s’occuper de sortir et soigner l’animal ?</label>
+                    {{ form_widget(form.whoIsCarring, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="dogWalkingPrevisional">Combien de promenades par jour accorderez-vous au chien ? De quelle
+                        durée
+                        seront ces promenades ?</label>
+                    {{ form_widget(form.dogWalkingPrevisional, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="gender">Désirez-vous adopter un mâle ou une femelle ?</label>
+                    {{ form_widget(form.gender, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab">
+        <h3 class="mb-5">Suivi / Divers :</h3>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="motivation">Quelle motivation vous pousse à adopter un chien sauvé par AMI ?</label>
+                    {{ form_widget(form.motivation, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="note">Vos remarques sur l’association AMI et/ou vos demandes particulières :</label>
+                    {{ form_widget(form.note, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="knowingAmi">Comment avez-vous fait connaissance avec notre association ?</label>
+                    {{ form_widget(form.knowingAmi, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="aggreedTerm">Acceptez-vous de nous prévenir immédiatement si quelque problème que
+                        ce soit devait se présenter avec l’animal ?</label>
+                    {{ form_widget(form.aggreedTerm, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12 ">
+                <div class="form-group">
+                    <label for="veterinary">Nom, adresse complète et numéro de téléphone de votre vétérinaire :</label>
+                    {{ form_widget(form.veterinary, { 
+                                "attr": {"class": "form-control my-2", "placeholder": ""}
+                            }) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{# <div class="text-center">
+    <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
+</div> #}
+<div style="overflow:auto;">
+    <div style="float:right;">
+        <button type="button" class="btn-primary" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" class="btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+</div>
+
+<!-- Circles which indicates the steps of the form: -->
+<div style="text-align:center;margin-top:40px;">
+    {% for i in 0..6 %}
+    <span class="step"></span>
+    {% endfor %}
+</div>
 {{ form_end(form) }}

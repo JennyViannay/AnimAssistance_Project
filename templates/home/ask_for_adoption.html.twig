@@ -9,7 +9,7 @@
         <p class="ml-2">Vous pouvez faire une demande d'adoption de 2 façons :</p>
         <hr class="my-4">
         <h4>Par courrier</h4>
-        <p class="lead"><a href="/public/uploads/files/DEMANDE-DADOPTION-201920-word.docx" download><i
+        <p class="lead"><a href="{{asset('uploads/files/DEMANDE-DADOPTION-201920-word.docx')}}" download><i
                     class="fa fa-download"></i> Télécharger le formulaire de demande d'adoption</a> <br> et le
             retourner complété et signé à l'adresse suivante :</p>
         <p>
@@ -18,7 +18,7 @@
         <hr class="my-4">
         <h4>En ligne</h4>
         <div class="text-center">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Je rempli une demande d'adoption en ligne</a>
+            <a class="btn btn-primary btn-lg" href="{{ path('ask_for_adoption_form') }}">Je rempli une demande d'adoption en ligne</a>
         </div>
     </div>
 </div>

@@ -2,8 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Image;
-use App\Entity\Question;
+use App\Entity\AskForAdoption;
 use App\Entity\Rescue;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -35,6 +34,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::section('Menu');
         yield MenuItem::linkToCrud('Rescapés', 'fas fa-paw', Rescue::class);
-        yield MenuItem::linkToCrud('Questions', 'fas fa-paw', Question::class);
+        yield MenuItem::linkToCrud('Demande d\'adoption', 'fas fa-paperclip', AskForAdoption::class);
     }
 }

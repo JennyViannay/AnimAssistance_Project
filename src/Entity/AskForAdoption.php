@@ -4,12 +4,17 @@ namespace App\Entity;
 
 use App\Repository\AskForAdoptionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Index;
 
 /**
  * @ORM\Entity(repositoryClass=AskForAdoptionRepository::class)
+ * @ORM\Table(indexes={@Index(name="created_at_index", columns={"created_at"})})
+ * @ORM\HasLifecycleCallbacks()
  */
 class AskForAdoption
 {
+    use Timestamp;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -78,11 +83,6 @@ class AskForAdoption
      * @ORM\Column(type="integer", nullable=true)
      */
     private $gardenAera;
-
-    /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $isClotured;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -273,6 +273,36 @@ class AskForAdoption
      */
     private $aggreedTerm;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $housingAera;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=YesNo::class)
+     */
+    private $gardenIsClotured;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $howManyDog;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $animalDetails;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isAccepted;
+
+    public function __construct()
+    {
+        $this->isAccepted = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -418,18 +448,6 @@ class AskForAdoption
     public function setGardenAera(?int $gardenAera): self
     {
         $this->gardenAera = $gardenAera;
-
-        return $this;
-    }
-
-    public function getIsClotured(): ?bool
-    {
-        return $this->isClotured;
-    }
-
-    public function setIsClotured(?bool $isClotured): self
-    {
-        $this->isClotured = $isClotured;
 
         return $this;
     }
@@ -862,6 +880,66 @@ class AskForAdoption
     public function setAggreedTerm(?YesNo $aggreedTerm): self
     {
         $this->aggreedTerm = $aggreedTerm;
+
+        return $this;
+    }
+
+    public function getHousingAera(): ?int
+    {
+        return $this->housingAera;
+    }
+
+    public function setHousingAera(int $housingAera): self
+    {
+        $this->housingAera = $housingAera;
+
+        return $this;
+    }
+
+    public function getGardenIsClotured(): ?YesNo
+    {
+        return $this->gardenIsClotured;
+    }
+
+    public function setGardenIsClotured(?YesNo $gardenIsClotured): self
+    {
+        $this->gardenIsClotured = $gardenIsClotured;
+
+        return $this;
+    }
+
+    public function getHowManyDog(): ?int
+    {
+        return $this->howManyDog;
+    }
+
+    public function setHowManyDog(?int $howManyDog): self
+    {
+        $this->howManyDog = $howManyDog;
+
+        return $this;
+    }
+
+    public function getAnimalDetails(): ?string
+    {
+        return $this->animalDetails;
+    }
+
+    public function setAnimalDetails(?string $animalDetails): self
+    {
+        $this->animalDetails = $animalDetails;
+
+        return $this;
+    }
+
+    public function getIsAccepted(): ?bool
+    {
+        return $this->isAccepted;
+    }
+
+    public function setIsAccepted(?bool $isAccepted): self
+    {
+        $this->isAccepted = $isAccepted;
 
         return $this;
     }
