@@ -46,7 +46,7 @@ class HomeController extends AbstractController
      */
     public function pageAdoption(): Response
     {
-        return $this->render('home/ask_for_adoption.html.twig');
+        return $this->render('home/adoption.html.twig');
     }
 
     /**
@@ -85,12 +85,20 @@ class HomeController extends AbstractController
             $entityManager->persist($askForAdoption);
             $entityManager->flush();
 
-            return $this->redirectToRoute('ask_for_adoption_index');
+            return $this->redirectToRoute('ask_for_adoption_success');
         }
 
         return $this->render('ask_for_adoption/new.html.twig', [
             'ask_for_adoption' => $askForAdoption,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/demande/adoption/succès", name="ask_for_adoption_success", methods={"GET"})
+     */
+    public function successAskAdoption()
+    {
+        return $this->render('ask_for_adoption/success.html.twig');
     }
 }

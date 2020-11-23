@@ -69,13 +69,13 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=Housing::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $housingType;
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveGarden;
 
@@ -96,13 +96,13 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=IsActive::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $isActive;
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveChildren;
 
@@ -123,7 +123,7 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveAllergy;
 
@@ -134,13 +134,13 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $everyoneIsOk;
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveDog;
 
@@ -151,7 +151,7 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveCat;
 
@@ -162,7 +162,7 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $haveOtherAnimal;
 
@@ -248,7 +248,7 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=Gender::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $gender;
 
@@ -269,7 +269,7 @@ class AskForAdoption
 
     /**
      * @ORM\ManyToOne(targetEntity=YesNo::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $aggreedTerm;
 

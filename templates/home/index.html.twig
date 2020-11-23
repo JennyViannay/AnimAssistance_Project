@@ -3,7 +3,16 @@
 {% block title %} - Accueil{% endblock %}
 
 {% block body %}
-<div class="container flex-align">
-    ici home
+<div class="container-fluid">
+    <div class="container">
+        <div class="row bg-light p-5">
+            <div class="text-center">
+                <h1>Association Anim'assistance</h1>
+                <h2>Pour La Métropole et ses Îles</h2>
+                <p>L’association A.M.I est une association de protection animale basée en France métropolitaine effectuant des sauvetages sur l’île de la Réunion.</p>
+                <a href="{{path('about_us')}}" class="btn btn-primary">Entrer</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

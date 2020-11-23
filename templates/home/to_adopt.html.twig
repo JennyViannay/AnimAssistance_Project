@@ -3,12 +3,14 @@
 {% block title %} - À l'adoption{% endblock %}
 
 {% block body %}
-<div class="container flex-align">
+<div class="container">
     <div class="row">
         {% for rescue in rescues %}
-        <div class="col-4">
+        <div class="col-lg-4 col-md-6 col-xs-12 py-3">
             <div class="card">
-                <img src="uploads/images/{{rescue.images[0].image}}" class="card-img-top" alt="...">
+                <div class="img-card-container">
+                    <img src="{{asset('uploads/images/' ~ rescue.images[0].image )}}" class="card-img-top img-card" alt="...">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{rescue.name}}</h5>
                     <p class="card-text">Né.e le {{rescue.birthday|date('d/m/Y')}} - {{rescue.gender|capitalize}}</p>

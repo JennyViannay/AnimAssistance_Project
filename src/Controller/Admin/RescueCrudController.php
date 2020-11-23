@@ -44,7 +44,9 @@ class RescueCrudController extends AbstractCrudController
 
         if ($pageName == Crud::PAGE_INDEX) {
             $images = CollectionField::new('images');
+            $createadAt = DateField::new('createdAt');
             array_push($fields, $images);
+            array_push($fields, $createadAt);
         }
 
         return $fields;

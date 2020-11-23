@@ -1,33 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;400;800&display=swap');
+
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+.space {
+  height: 150px;
+}
+
+.img-card-container {
+  height: 300px;
+  overflow: hidden;
+}
+
+.img-card {
+  width: 100%;
+  height: auto;
+}
+
 .flex-align {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh
+}
+
+.bg-home {
+  background-image: url('../images/dog.jpg');
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Re */
+}
+
+.shadow {
+  box-shadow: 20px 20px 30px -10px grey
 }
 
 /* Hide all steps by default: */
+
 .tab {
-    display: none;
-  }
-  
-  /* Make circles that indicate the steps of the form: */
-  .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-  }
-  
-  /* Mark the active step: */
-  .step.active {
-    opacity: 1;
-  }
-  
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
-    background-color: #4CAF50;
-  }
+  display: none;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+
+.step.finish {
+  background-color: #4CAF50;
+}
