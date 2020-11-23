@@ -11,14 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class PagesController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('pages/index.html.twig');
     }
 
     /**
@@ -26,7 +26,7 @@ class HomeController extends AbstractController
      */
     public function aboutUs(): Response
     {
-        return $this->render('home/about.html.twig');
+        return $this->render('pages/about.html.twig');
     }
 
     /**
@@ -36,7 +36,7 @@ class HomeController extends AbstractController
     {
         //MOSAIC
         $rescues = $rescueRepository->findBy(['is_adopted' => 1]);
-        return $this->render('home/adopted.html.twig',[
+        return $this->render('pages/adopted.html.twig',[
             'rescues' => $rescues
         ]);
     }
@@ -46,7 +46,7 @@ class HomeController extends AbstractController
      */
     public function pageAdoption(): Response
     {
-        return $this->render('home/adoption.html.twig');
+        return $this->render('pages/adoption.html.twig');
     }
 
     /**
@@ -55,7 +55,7 @@ class HomeController extends AbstractController
     public function toAdopt(RescueRepository $rescueRepository): Response
     {
         $rescues = $rescueRepository->findBy(['is_adopted' => 0]);
-        return $this->render('home/to_adopt.html.twig',[
+        return $this->render('pages/to_adopt.html.twig',[
             'rescues' => $rescues
         ]);
     }
@@ -66,7 +66,7 @@ class HomeController extends AbstractController
     public function show(Rescue $rescue): Response
     {
         //SHOW ONE
-        return $this->render('home/show.html.twig', [
+        return $this->render('pages/show.html.twig', [
             'rescue' => $rescue
         ]);
     }
